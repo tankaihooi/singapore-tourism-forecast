@@ -1,7 +1,7 @@
 # ✈️ Singapore Tourism Arrivals Forecast
 
 <p align="center">
-  <a href="https://huggingface.co/spaces/YOUR_USERNAME/sg-tourism-forecast">
+  <a href="https://huggingface.co/spaces/tankaihooi/sg-tourism-forecast">
     <img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-sm.svg" alt="Open in Spaces">
   </a>
   &nbsp;
@@ -38,12 +38,11 @@ This project builds a pipeline that **(1) quantifies forecast uncertainty** — 
 
 Across **9 rolling backtest windows (2010–2018)**, SARIMA with conformal prediction intervals achieved the best median MAE and the most reliable coverage:
 
-| Model | Median MAE | Coverage (95% PI) | Interval Width |
-|:---|---:|:---:|:---:|
-| **SARIMA + Conformal** | **Lowest** ✅ | ~95% | Moderate |
-| Prophet + Native PI | Second | ~91% ⚠️ | Narrowest |
-| NeuralProphet + Conformal | Third | ~94% | Widest |
-| ARIMA + Conformal | Fourth | ~95% | Moderate |
+| Model | Median MAE | Mean MAE | MAPE | Coverage (95% PI) | DM Test vs SARIMA |
+|:---|---:|---:|---:|:---:|:---:|
+| **★ SARIMA + Conformal** | **32,059** ✅ | 37,997 | **14.7%** ✅ | **100%** ✅ | — reference — |
+| Prophet + Native PI | 36,088 | 41,705 | 15.5% | 95.8% | Not significant |
+| ARIMA + Conformal | 52,061 | 54,224 | 17.6% | 95.8% | Marginal (p<0.10) |
 
 > **Coverage is the more important metric.** A model achieving 91% coverage when claiming 95% is systematically overconfident — every planning decision made from its intervals is based on a confidence level that doesn't actually hold.
 
@@ -147,7 +146,7 @@ Expanding-window backtesting across 9 forecast origins (2010-01 → 2018-01), ea
 
 ```bash
 # 1. Clone and install
-git clone https://github.com/YOUR_USERNAME/singapore-tourism-forecast
+git clone https://github.com/tankaihooi/singapore-tourism-forecast
 cd singapore-tourism-forecast
 pip install -r requirements.txt
 
@@ -185,5 +184,5 @@ streamlit run streamlit_app.py
 <p align="center">
   Data: <a href="https://www.singstat.gov.sg/">SingStat / Data.gov.sg</a> ·
   Built with Python, pmdarima, Prophet, NeuralProphet, Streamlit ·
-  Deployed on <a href="https://huggingface.co/spaces/YOUR_USERNAME/sg-tourism-forecast">Hugging Face Spaces</a>
+  Deployed on <a href="https://huggingface.co/spaces/tankaihooi/sg-tourism-forecast">Hugging Face Spaces</a>
 </p>

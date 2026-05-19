@@ -1,0 +1,29 @@
+# Singapore Tourism Forecasting — Week 5
+# requirements.txt for Hugging Face Spaces deployment
+#
+# ⚠️  Python version: 3.10  (pinned via README.md YAML `python_version: "3.10"`)
+#
+# Two intentional omissions vs local requirements:
+#   - streamlit: HF Spaces injects this from sdk_version in README.md YAML.
+#     Including it here causes a version conflict and a build failure.
+#   - neuralprophet: requires PyTorch (~2 GB), exceeds free-tier build timeout.
+#     The app degrades gracefully when it is absent.
+#
+# Local install (includes both):
+#   pip install -r requirements.txt neuralprophet streamlit==1.33.0
+
+# ── Core data stack ───────────────────────────────────────────────────────────
+pandas==2.1.4
+numpy==1.26.4
+scipy==1.12.0
+
+# ── Forecasting models ────────────────────────────────────────────────────────
+pmdarima==2.0.4
+prophet==1.1.5
+# neuralprophet omitted — PyTorch dependency (~2 GB), install locally only
+
+# ── Visualisation ─────────────────────────────────────────────────────────────
+matplotlib==3.8.2
+
+# ── Scikit-learn ──────────────────────────────────────────────────────────────
+scikit-learn==1.4.2

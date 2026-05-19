@@ -1,0 +1,4 @@
+Model,BT Windows,BT MAE (mean),BT MAE (median),BT MAE Std,BT RMSE,BT MAPE,Conformal Cov,Interval Width,Test MAE,Test MAPE,Test Cov,vs Best (DM)
+★ SARIMA,6,"    37,997","    32,059","    21,257","    46,870",  14.7%,100.0%,"   356,201","   259,526", 729.1%,  2.0%,— (reference)
+Prophet,6,"    41,705","    36,088","    14,710","    47,746",  15.5%, 95.8%,"   287,813","   241,882", 740.1%,  4.1%,Not significant
+ARIMA,6,"    54,224","    52,061","    10,121","    67,253",  17.6%, 95.8%,"   367,128","   307,436", 749.3%, 12.2%,Marginal (p<0.10)

@@ -1,7 +1,7 @@
 """
 Singapore Tourism Arrivals Forecaster
 ======================================
-Streamlit dashboard — Week 5 of the Singapore Tourism Forecasting project.
+Streamlit dashboard
 
 Usage (local):
     streamlit run streamlit_app.py
@@ -12,9 +12,9 @@ Usage (Hugging Face Spaces):
     - Place data/ folder (from Week 4 outputs) alongside it
 
 Data dependency hierarchy:
-    1. data/arrivals_clean.csv        (from Week 1)
-    2. data/model_comparison_table.csv (from Week 4)
-    3. data/test_set_predictions.csv  (from Week 4)
+    1. data/arrivals_clean.csv
+    2. data/model_comparison_table.csv 
+    3. data/test_set_predictions.csv 
     If any file is missing, the dashboard generates synthetic demo data
     so the UI is always fully functional.
 """
